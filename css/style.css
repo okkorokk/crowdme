@@ -1,0 +1,144 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+}
+header {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  background-color: white;
+}
+.fixed-container {
+  max-width: 1030px;
+  margin: auto;
+}
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.ul-header-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+}
+.nav-item {
+  margin-left: 15px;
+  margin-right: 15px;
+  list-style-type: none;
+}
+.nav-item > a {
+  text-decoration: none;
+  color: #bbbbbb;
+  font-size: 13px;
+}
+.nav-item > a:hover {
+  color: #bcda5c;
+}
+.login-button {
+  color: white;
+  min-width: 100px;
+  min-height: 40px;
+  background-color: #bcda5c;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+.logo {
+  margin-left: 5px;
+  z-index: 50;
+}
+.header-burger {
+  display: none;
+}
+.main {
+  padding-top: 95px;
+}
+@media (max-width: 890px) {
+  body.lock {
+    overflow: hidden;
+  }
+  .header-burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    z-index: 50;
+  }
+  .header-burger span {
+    background-color: #bcda5c;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    top: 9px;
+  }
+  .header-burger::before,
+  .header-burger::after {
+    content: "";
+    background-color: #bcda5c;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    transition: 0.2s;
+    left: 0;
+  }
+  .header-burger::before {
+    top: 0;
+  }
+  .header-burger::after {
+    bottom: 0;
+  }
+  .header-burger.active::before {
+    transform: rotate(45deg);
+    top: 9px;
+    transition: 0.2s;
+  }
+  .header-burger.active::after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+    transition: 0.2s;
+  }
+  .header-burger.active span {
+    transform: scale(0);
+  }
+  .header-menu {
+    position: fixed;
+    top: -200%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    padding-top: 70px;
+    transition: 0.5s;
+    overflow: auto;
+  }
+  .header-menu.active {
+    top: 0;
+    transition: 0.5s;
+  }
+  .ul-header-nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-item {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .nav-item a {
+    font-size: 20px;
+  }
+  .login-button {
+    margin-top: 15px;
+    width: 150px;
+    height: 60px;
+    border-radius: 50px;
+    font-size: 20px;
+  }
+}
