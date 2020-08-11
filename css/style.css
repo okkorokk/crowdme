@@ -1,7 +1,6 @@
 body {
 	font-family: "Open Sans", sans-serif;
 	margin: 0;
-	overflow-x: hidden;
 }
 header {
 	position: fixed;
@@ -278,7 +277,15 @@ header {
 	color: #838383;
 	margin: 15px;
 	max-width: 520px;
+	transition: 0.2s;
 	border-radius: 5px;
+}
+.card:hover {
+	transform: scale(1.02);
+	transition: 0.2s;
+	-webkit-box-shadow: 0px 0px 24px 3px rgba(161, 161, 161, 1);
+	-moz-box-shadow: 0px 0px 24px 3px rgba(161, 161, 161, 1);
+	box-shadow: 0px 0px 24px 3px rgba(161, 161, 161, 1);
 }
 .card img {
 	border-radius: 5px 5px 0 0;
@@ -328,6 +335,7 @@ header {
 	justify-content: center;
 	align-items: center;
 }
+
 .card-bottom {
 	display: flex;
 	justify-content: flex-end;
@@ -337,6 +345,47 @@ header {
 .card-bottom p {
 	padding-right: 30px;
 	cursor: pointer;
+}
+.comments-section {
+	margin-top: 50px;
+}
+.comments-title {
+	text-align: center;
+}
+.comments-title h3 {
+	color: #add136;
+	font-size: 40px;
+}
+
+.comments-title p {
+	color: #575757;
+	padding: 10px;
+	text-align: center;
+}
+.comments-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.comment {
+	display: flex;
+	justify-content: space-between;
+	width: 45%;
+	margin: 10px;
+	min-height: 335px;
+	background-color: #f9f9f9;
+	border-radius: 10px;
+}
+.comment img {
+	object-fit: cover;
+}
+.comment-text {
+	padding: 20px;
+	padding-top: 0;
+	color: #575757;
+}
+.comment-text h3 {
+	color: #add136;
 }
 @media (max-width: 576px) {
 	.tabs-block {
@@ -349,12 +398,21 @@ header {
 		align-items: center;
 		justify-content: center;
 		text-align: center;
+		padding-right: 0;
+		padding-left: 0;
 	}
 	.tab-item {
 		font-size: 11px;
 	}
 	.features-text {
 		text-align: center;
+	}
+	.comment img {
+		object-fit: contain;
+	}
+
+	.comment {
+		flex-direction: column;
 	}
 }
 @media (max-width: 890px) {
@@ -450,5 +508,15 @@ header {
 	}
 	.right-column {
 		justify-content: center;
+	}
+	.comments-container {
+		flex-direction: column;
+	}
+	.comment {
+		display: flex;
+		justify-content: space-between;
+		width: 95%;
+
+		margin: 30px;
 	}
 }
