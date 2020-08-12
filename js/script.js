@@ -31,3 +31,15 @@ for (let i = 0; i < progressBar.length; i++) {
 	let progressBarValue = progressBar[i].value;
 	funded[i].innerHTML = progressBarValue + "% Funded";
 }
+
+let loginButton = document.getElementsByClassName("open-form");
+let form = document.getElementById("pop-up-container");
+let closeButton = document.getElementById("close");
+closeButton.onclick = function () {
+	form.style.visibility = "collapse";
+};
+for (let i = 0; i < loginButton.length; i++) {
+	loginButton[i].onclick = function () {
+		form.style.visibility = "visible";
+	};
+}
